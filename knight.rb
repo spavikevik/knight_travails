@@ -12,7 +12,7 @@ end
 
 def knight_moves(start_position, end_position)
   path = backtrace discover_path start_position, end_position
-  puts "You made it in #{path.count} moves! Here's your path"
+  puts "You made it in #{path.count-1} moves! Here's your path"
   path.each do |move|
     print "#{move}\n"
   end
@@ -36,3 +36,5 @@ def discover_path(start_position, end_position)
     queue += node.add_children(generate_possible_moves(node.value))
   end
 end
+
+knight_moves([3,3], [4,3])
